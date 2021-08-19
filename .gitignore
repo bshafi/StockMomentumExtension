@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+StockMomentumExtension/.DS_Store
+.DS_Store
