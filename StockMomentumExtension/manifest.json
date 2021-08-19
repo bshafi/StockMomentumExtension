@@ -1,0 +1,14 @@
+{
+    "name": "Stock Momentum Extension",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 3,
+    "version": "0.1",
+    "description": "Adds extended functionality to Trader Sync",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ]
+}
