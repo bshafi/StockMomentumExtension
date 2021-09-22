@@ -12,7 +12,9 @@ Trader Sync is a site that allows you to record past stock market transactions s
 #### Building Stock Momentum Extension
 
 ```
-    npx browserify StockMomentumExtension/index.js -o StockMomentumExtension/bundle.js
+    npx browserify StockMomentumExtension/true_background.js -o StockMomentumExtension/background.js;
+    npx browserify StockMomentumExtension/true_index.js -o StockMomentumExtension/index.js;
+    npx browserify StockMomentumExtension/true_inject.js -o StockMomentumExtension/inject.js
 ```
 
 #### Running Tests

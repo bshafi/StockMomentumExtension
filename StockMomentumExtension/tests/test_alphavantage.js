@@ -1,0 +1,1 @@
+const { add_test } = require('./tests');
