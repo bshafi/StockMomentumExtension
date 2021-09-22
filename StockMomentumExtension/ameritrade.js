@@ -1,4 +1,4 @@
-const { DataFrame } = require('dataframe-js');
+"use strict";
 
 function split_on_comma(line) {
     let elems = [];
@@ -20,6 +20,7 @@ function split_on_comma(line) {
     }
     elems.push(line.slice(start));
     return elems;
+    
 }
 
 function fuse_Uint8Array(a, b) {
@@ -120,7 +121,7 @@ async function* parse_ameritrade_csv(file) {
 
 class Transaction {
     constructor(description, date, time, timezone_code = 'CST') {
-        this.date = new Date(date + ' ' + time + ' ' + timezone_code);
+        this.date = date + ' ' + time + ' ' + timezone_code;
 		let terms = description.split(' ');
 		let offset = 0;
 		if (terms[offset] === 'tIP') {
@@ -265,10 +266,10 @@ async function ameritrade_dataframe(file) {
             let ticker = transaction.symbol;
             let price = parseFloat(transaction.price);
             let amount = parseInt(transaction.num, 10);
-            data.push([datetime, ticker, amount, price]);
+            data.push({ 'datetime': datetime, 'ticker': ticker, 'amount': amount, 'price': price });
         }
     }
-    return new DataFrame(data, ['datetime', 'ticker', 'amount', 'price']);
+    return data;
 }
 
 module.exports = {

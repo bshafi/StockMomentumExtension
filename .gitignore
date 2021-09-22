@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 StockMomentumExtension/.DS_Store
 .DS_Store
+.vscode/**
